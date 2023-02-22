@@ -8,10 +8,11 @@ export default class extends AbstractView {
 
     async getHTML() {
         return `
-        <h1>Bienvenu SPA</h1>
-        <h3>Page de dashboard</h3>
+        <h1>Bienvenu sur GameViewer</h1>
+        <h3>Page d'accueil</h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa dolorum corrupti itaque nulla modi saepe eius cumque ea et sint quae, error reprehenderit accusamus architecto atque obcaecati in repellat voluptatem?</p>
-        <a href='/posts' data-link>Voir les publications</a>
+        <p>Corrupti itaque nulla modi saepe eius cumque ea et sint quae, error reprehenderit accusamus architecto atque obcaecati in repellat error reprehenderit accusamus architecto voluptatem? Ipsa dolorum corrupti itaque nulla modi saepe eius cumque ea et sint quae, error reprehenderit accusamus architecto atque obcaecati in repellat voluptatem?</p>
+        <a href='/jeux' class='btn btn-info' data-link>Voir les jeux</a>
         `;
 
     }

@@ -21,7 +21,7 @@ export default class extends AbstractView {
                 <img class="card-img-top" src="${post.image_background}" alt="Card image cap">
                 <div class="d-flex justify-content-between align-items-center p-2 bg-info-subtle h-25">
                     <h5 class="card-title pe-1">${post.name}</h5>
-                    <a href="/jeux-de-platforme/${post.id}" class="btn btn-primary">Voir</a>
+                    <a href="/jeux-de-platforme/${post.id}" class="btn btn-primary" data-link>Voir</a>
                 </div>
             </div>
             `;

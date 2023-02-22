@@ -23,7 +23,7 @@ export default class extends AbstractView {
             <div class="border border-warning col-lg-12 bg-info-subtle m-2">
                 <div class="d-flex justify-content-between align-items-center p-2">
                     <h5 class="card-title pe-1">${post.name}</h5>
-                    <a href="/jeu/${post.id}" class="btn btn-primary">Voir</a>
+                    <a href="/jeu/${post.id}" class="btn btn-primary" data-link>Voir</a>
                 </div>
             </div>
             `;

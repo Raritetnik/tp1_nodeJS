@@ -20,7 +20,7 @@ export default class extends AbstractView {
         <h2>${article.title}</h2>
         <small><i>${article.Author}</i></small>
         <p>${article.description}</p>
-        <a href='/post'>Retour</a>
+        <a href='/post' data-link>Retour</a>
         `;
     }
 }
