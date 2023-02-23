@@ -18,7 +18,7 @@ export default class extends AbstractView {
         data['results'].forEach(post => {
             listePosts += `
             <div class="obj_card card col-lg-4">
-                <img class="card-img-top" src="${post.background_image}" alt="Card image cap">
+                <img class="card-img-top" src="${post.background_image}" alt="Card image game">
                 <div class="d-flex justify-content-between align-items-center p-2 bg-info-subtle h-25">
                     <h5 class="card-title pe-1">${post.name}</h5>
                     <a href="/jeu/${post.id}" class="btn btn-primary" data-link>Voir</a>

@@ -6,8 +6,8 @@ const fs = require('fs');
 const request = require('request');
 const { URL_GAMES, URL_PLATFORMS, PORT, API_KEY } = require('./config.js')
 
-//loadDB(URL_GAMES, 'games');
-//loadDB(URL_PLATFORMS, 'platforms');
+loadDB(URL_GAMES, 'games');
+loadDB(URL_PLATFORMS, 'platforms');
 async function loadDB(urlAPI, title) {
     request.get({
         url: urlAPI+API_KEY,

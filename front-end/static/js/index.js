@@ -1,6 +1,5 @@
 import Accueil from "./views/Accueil.js";
 import Platformes from "./views/Platformes.js";
-import PlatformeView from "./views/PlatformeView.js";
 import JeuView from "./views/JeuView.js";
 import Jeux from "./views/Jeux.js";
 import JeuDePlatforme from "./views/JeuDePlatforme.js";
@@ -23,14 +22,12 @@ const router = async () => {
         { path: "/", view: Accueil },
         { path: "/jeux", view: Jeux },
         { path: "/platformes", view: Platformes },
-        { path: "/platforme/:id", view: PlatformeView },
         { path: "/jeu/:id", view: JeuView },
         { path: "/jeux-de-platforme/:id", view: JeuDePlatforme }
     ]
 
     const potencialMatches = routes.map(route => { return {
         route: route,
-        //isMatch: location.pathname === route.path,
         result: location.pathname.match(pathToRegex(route.path))
     }});
 
@@ -40,6 +37,7 @@ const router = async () => {
     // Si URL n'est pas trouvé, diriger vers le precedant
     match = match || {route: route[0], result: [location.pathname]};
 
+    // Modification du contenu dans le DIV de #app
     const view = new match.route.view(getParams(match));
     document.querySelector('#app').innerHTML = await view.getHTML();
 }
