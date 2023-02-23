@@ -7,13 +7,15 @@ export default class extends AbstractView {
     }
 
     async getHTML() {
+        // Chargement de base de données
         async function getData(url) {
             const response = await fetch(url)
 
             return response.json();
         }
-
         const data = await getData('/static/db/platforms.json');
+
+        // Création de catalogue avec les résultats
         let listePosts = "<div class='container row' >";
         data['results'].forEach(post => {
             listePosts += `

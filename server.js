@@ -6,8 +6,15 @@ const fs = require('fs');
 const request = require('request');
 const { URL_GAMES, URL_PLATFORMS, PORT, API_KEY } = require('./config.js')
 
+// Télécharger la base de données des jeux existants
 loadDB(URL_GAMES, 'games');
+
+// Télécharger la base de données des platformes existants
 loadDB(URL_PLATFORMS, 'platforms');
+
+/**
+ * Fonction de téléchargement de données à partir de l'API
+ */
 async function loadDB(urlAPI, title) {
     request.get({
         url: urlAPI+API_KEY,

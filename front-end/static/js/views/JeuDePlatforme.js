@@ -5,15 +5,10 @@ export default class extends AbstractView {
     constructor(param) {
         super(param)
         this.setTitle('Jeux supportés');
-
-        document.querySelector('#app').addEventListener("mousedown", (e) => {
-            if(e.target.classList.contains('img_sec')) {
-                document.querySelector('#img_prim').src = e.target.src;
-            }
-        } )
     }
 
     async getHTML() {
+        // Chargement de base de données
         async function getData(url) {
             const response = await fetch(url)
             return response.json();

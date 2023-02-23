@@ -5,6 +5,7 @@ export default class extends AbstractView {
         super(param)
         this.setTitle('Jeu View');
 
+        // Réaction de carrousel sur les click des images, affichage en gros.
         document.querySelector('#app').addEventListener("mousedown", (e) => {
             if(e.target.classList.contains('img_sec')) {
                 document.querySelector('#img_prim').src = e.target.src;
@@ -13,16 +14,17 @@ export default class extends AbstractView {
     }
 
     async getHTML() {
-        const nu = Number(this.param.id);
-
+        // Chargement de base de données
         async function getData(url) {
             const response = await fetch(url);
             return response.json();
         }
-
         const data = await getData('/static/db/games.json');
+        // Reception de ID passée en paramètres et recherche dans base de données
+        const nu = Number(this.param.id);
         const jeu = data["results"].find(item => item.id === nu);
 
+        // Si FIND retourne ne trouve pas le jeu
         if(jeu == null) {
             return `<div>
                 <h3>Désolé, cette jeu n'est pas encore dans notre système... :C </h3>
@@ -30,7 +32,7 @@ export default class extends AbstractView {
             </div>`
         }
 
-        // Creation de listes images, tags et stores
+        // Creation de listes images, tags et stores et attribution de couleur selon la note
         let images = "";
         let tags = "";
         let stores = "";
